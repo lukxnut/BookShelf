@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400&family=Goudy+Bookletter+1911&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+}
+
+.gentium {
+    font-family: 'Gentium Book Basic', serif;
+}
+
+.goudy {
+    font-family: 'Goudy Bookletter 1911', serif;
+}
+
+header>h1 {
+    font-weight: 700;
+}
+
+header>button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+main {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+main>*:first-child {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.search-container>h1 {
+    font-weight: 700;
+    text-align: center;
+}
+
+.search-container>button {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-container>input {
+    width: 100%;
+    backdrop-filter: blur(40px);
+    border: none;
+    border-radius: 15px;
+    padding: 0 15px;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+.add-container {
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-btn {
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(40px);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.add-card {
+    display: none;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+}
+
+.add-card>h1 {
+    text-align: center;
+}
+
+.add-card>button {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element>input {
+    border: none;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+}
+
+.submit>input {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.bookshelf {
+    width: 100%;
+}
+
+.bookshelf>* {
+    width: 100%;
+    height: fit-content;
+    flex-grow: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+}
+
+.bookshelf>*>*:first-child {
+    text-align: center;
+}
+
+.bookshelf>*>.book-card {
+    width: 100%;
+    height: fit-content;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+    backdrop-filter: blur(40px);
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.bookshelf>*>.book-card>h1 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.bookshelf>*>.book-card>h2 {
+    font-style: italic;
+}
+
+.bookshelf>*>.book-card>h3 {
+    margin-bottom: 10px;
+}
+
+.bookshelf>*>.book-card>.btn-container {
+    gap: 5px;
+}
+
+.bookshelf>*>.book-card>.btn-container>* {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top: auto;
+}
+
+@media (max-width: 35em) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 8vw;
+    }
+
+    header>img {
+        width: 35px;
+        aspect-ratio: 1;
+    }
+
+    header>h1 {
+        font-size: 32px;
+    }
+
+    .search {
+        width: 25px;
+        height: 25px;
+    }
+
+    main {
+        padding-inline: 20px;
+    }
+
+    main>*:first-child {
+        font-size: 26px;
+    }
+
+    .search-container>h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .search-container>button {
+        top: 30px;
+        right: 20px;
+    }
+
+    .search-container>button>.close {
+        width: 20px;
+        height: 20px;
+    }
+
+    .search-container>input {
+        border-radius: 10px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .add-btn {
+        font-size: 16px;
+    }
+
+    .add-card {
+        padding: 20px;
+    }
+
+    .add-card>h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .add-card>button {
+        top: 20px;
+        right: 20px;
+    }
+
+    .close {
+        width: 20px;
+        height: 20px;
+    }
+
+    .form-element,
+    .form-element-check {
+        gap: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .form-element-check {
+        margin-bottom: 25px;
+    }
+
+    .form-element>input {
+        height: 30px;
+        padding-left: 8px;
+        border-radius: 4px;
+    }
+
+    .submit>input {
+        font-size: 20px;
+        padding: 15px 40px;
+        border-radius: 10px;
+    }
+
+    .bookshelf {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .bookshelf>* {
+        padding: 25px 20px;
+    }
+
+    .bookshelf>*>*:first-child {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .bookshelf>*>.book-card {
+        padding: 20px;
+    }
+
+    .bookshelf>*>.book-card>h1 {
+        font-size: 20px;
+    }
+
+    .bookshelf>*>.book-card>h2,
+    .bookshelf>*>.book-card>h3 {
+        font-size: 18px;
+    }
+
+    .book-btn {
+        width: 30px;
+        height: 30px;
+        margin-left: -7px;
+    }
+}
+
+@media (min-width: 35em) and (max-width: 45em) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 35px;
+        margin-bottom: 7vw;
+    }
+
+    header>img {
+        width: 40px;
+        aspect-ratio: 1;
+    }
+
+    header>h1 {
+        font-size: 36px;
+    }
+
+    .search {
+        width: 30px;
+        height: 30px;
+    }
+
+    main {
+        padding-inline: 30px;
+    }
+
+    main>*:first-child {
+        font-size: 30px;
+    }
+
+    .search-container>h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .search-container>button {
+        top: 30px;
+        right: 20px;
+    }
+
+    .search-container>button>.close {
+        width: 20px;
+        height: 20px;
+    }
+
+    .search-container>input {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .add-btn {
+        font-size: 20px;
+    }
+
+    .add-card {
+        padding: 25px;
+    }
+
+    .add-card>h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .add-card>button {
+        top: 25px;
+        right: 25px;
+    }
+
+    .close {
+        width: 25px;
+        height: 25px;
+    }
+
+    .form-element,
+    .form-element-check {
+        gap: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .form-element-check {
+        margin-bottom: 25px;
+    }
+
+    .form-element>input {
+        height: 30px;
+        padding-left: 8px;
+        border-radius: 4px;
+    }
+
+    .submit>input {
+        font-size: 24px;
+        padding: 15px 40px;
+        border-radius: 10px;
+    }
+
+    .bookshelf {
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .bookshelf>* {
+        padding: 25px 20px;
+    }
+
+    .bookshelf>*>*:first-child {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .bookshelf>*>.book-card {
+        padding: 20px;
+    }
+
+    .bookshelf>*>.book-card>h1 {
+        font-size: 24px;
+    }
+
+    .bookshelf>*>.book-card>h2,
+    .bookshelf>*>.book-card>h3 {
+        font-size: 20px;
+    }
+
+    .book-btn {
+        width: 32px;
+        height: 32px;
+        margin-left: -7px;
+    }
+}
+
+@media (min-width: 45em) {
+    header {
+        display: grid;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 30px 50px;
+        grid-template-columns: 80px 1fr 1fr;
+        margin-bottom: 5vw;
+    }
+
+    header>img {
+        width: 50px;
+        aspect-ratio: 1;
+    }
+
+    header>h1 {
+        font-size: 40px;
+    }
+
+    header>button {
+        justify-self: flex-end;
+    }
+
+    .search {
+        width: 35px;
+        height: 35px;
+    }
+
+    main {
+        padding-inline: 50px;
+    }
+
+    main>*:first-child {
+        font-size: 40px;
+    }
+
+    .search-container>h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .search-container>button {
+        top: 30px;
+        right: 20px;
+    }
+
+    .search-container>button>.close {
+        width: 25px;
+        height: 25px;
+    }
+
+    .search-container>input {
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .add-btn {
+        font-size: 26px;
+    }
+
+    .add-card {
+        padding: 30px;
+    }
+
+    .add-card>h1 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    .add-card>button {
+        top: 30px;
+        right: 30px;
+    }
+
+    .close {
+        width: 30px;
+        height: 30px;
+    }
+
+    .form-element,
+    .form-element-check {
+        gap: 5px;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .form-element-check {
+        margin-bottom: 25px;
+    }
+
+    .form-element>input {
+        height: 35px;
+        padding-left: 8px;
+        border-radius: 4px;
+    }
+
+    .submit>input {
+        font-size: 26px;
+        padding: 15px 45px;
+        border-radius: 10px;
+    }
+
+    .bookshelf {
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .bookshelf>* {
+        padding: 25px 20px;
+    }
+
+    .bookshelf>*>*:first-child {
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+
+    .bookshelf>*>.book-card {
+        padding: 20px;
+    }
+
+    .bookshelf>*>.book-card>h1 {
+        font-size: 24px;
+    }
+
+    .bookshelf>*>.book-card>h2,
+    .bookshelf>*>.book-card>h3 {
+        font-size: 20px;
+    }
+
+    .book-btn {
+        width: 35px;
+        height: 35px;
+        margin-left: -5px;
+    }
+}

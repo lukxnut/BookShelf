@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="assets/img/logo.svg" alt="Logo">
+        <h1 class="gentium">Bookshelf App</h1>
+        <button class="search-btn">
+            <span class="iconify search" data-icon="fa:search" style="color: black;"></span>
+        </button>
+    </header>
+    <main class="flex">
+        <h1 class="gentium">Mau menambahkan buku hari ini ?</h1>
+        <div class="search-container gentium">
+            <h1>Cari Judul Buku</h1>
+            <button class="search-close-btn">
+                <span class="iconify close" data-icon="fa:close" style="color: black;"></span>
+            </button>
+            <input type="search" id="search-box" value="" name="search-box" placeholder="Input book title">
+        </div>
+        <div class="add-container flex">
+            <button class="add-btn goudy">Tambahkan Buku Baru</button>
+            <article class="add-card">
+                <button class="close-btn">
+                    <span class="iconify close" data-icon="fa:close" style="color: black;"></span>
+                </button>
+                <h1 class="goudy">Tambahkan Buku Baru</h1>
+                <form id="form" class="gentium">
+                    <div class="form-element">
+                        <label for="title">Judul</label>
+                        <input type="text" id="title" name="nama" placeholder="Masukan Judul Buku" value=""
+                            maxlength="50" required>
+                    </div>
+                    <div class="form-element">
+                        <label for="author">Penulis</label>
+                        <input type="text" id="author" name="author" placeholder="Masukan Nama Penulis" value=""
+                            maxlength="50">
+                    </div>
+                    <div class="form-element">
+                        <label for="year">Tahun</label>
+                        <input type="text" id="year" placeholder="Masukan Tahun Diterbitkan" value="" maxlength="4">
+                    </div>
+                    <div class="form-element-check">
+                        <label for="finish">Selesai dibaca ?</label>
+                        <input type="checkbox" id="finish" value="">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Tambah" name="submit" id="submit-btn">
+                    </div>
+                </form>
+            </article>
+        </div>
+        <article class="flex bookshelf">
+            <div class="unfinish-container">
+                <h1 class="goudy">Belum Selesai dibaca</h1>
+            </div>
+            <div class="finish-container">
+                <h1 class="goudy">Selesai dibaca</h1>
+            </div>
+        </article>
+    </main>
+    <footer class="flex gentium">
+        <p>&#169; 2022, Christian</p>
+    </footer>
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/DOM.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/addBtn.js"></script>
+    <script src="assets/js/searchBtn.js"></script>
+</body>
+
+</html>
